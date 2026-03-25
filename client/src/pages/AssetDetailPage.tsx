@@ -60,7 +60,7 @@ export function AssetDetailPage() {
       <StatusBanner expireDate={asset.expireDate} />
 
       {/* Basic Info */}
-      <div className="bg-white mx-4 mt-3 rounded-xl overflow-hidden">
+      <div className="bg-white mx-4 mt-3 rounded-2xl overflow-hidden">
         {[
           { label: "类型",   value: ASSET_TYPE_LABEL[asset.type] ?? asset.type },
           { label: "服务商", value: asset.provider },
@@ -91,7 +91,7 @@ export function AssetDetailPage() {
             <div key={month} className="mb-3">
               <div className="text-xs text-gray-400 mb-1">{month}</div>
               {records.map((r) => (
-                <div key={r.id} className="bg-white rounded-lg px-4 py-3 mb-1.5 flex justify-between items-center">
+                <div key={r.id} className="bg-white rounded-2xl px-4 py-3 mb-1.5 flex justify-between items-center">
                   <div>
                     <div className="text-sm text-gray-800">{r.renewedAt.slice(0, 10)}</div>
                     {r.notes && <div className="text-xs text-gray-400 mt-0.5">{r.notes}</div>}
@@ -105,7 +105,8 @@ export function AssetDetailPage() {
       </div>
 
       {/* Bottom Actions */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 flex gap-3 px-4 py-3 z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 z-40">
+        <div className="max-w-2xl mx-auto flex gap-3 px-4 py-3">
         <button onClick={() => setShowDelete(true)} className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-red-50 text-[#EF4444] text-sm">
           <Trash2 size={16} /> 删除
         </button>
@@ -115,6 +116,7 @@ export function AssetDetailPage() {
         <button onClick={() => setShowRenew(true)} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#22C55E] text-white text-sm font-medium">
           <RefreshCw size={16} /> 续费
         </button>
+        </div>
       </div>
 
       <ConfirmDialog

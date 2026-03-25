@@ -60,14 +60,14 @@ export function HomePage() {
             value={search}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="搜索资产名称"
-            className="w-full pl-9 pr-3 py-2 bg-gray-100 rounded-lg text-sm outline-none"
+            className="w-full pl-9 pr-3 py-2 bg-gray-100 rounded-xl text-sm outline-none"
           />
         </div>
         <div className="flex gap-2">
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="flex-1 bg-gray-100 rounded-lg px-2 py-1.5 text-sm outline-none text-gray-700"
+            className="flex-1 bg-gray-100 rounded-xl px-2 py-1.5 text-sm outline-none text-gray-700"
           >
             <option value="">全部类型</option>
             {Object.entries(ASSET_TYPE_LABEL).map(([v, l]) => (
@@ -77,7 +77,7 @@ export function HomePage() {
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            className="flex-1 bg-gray-100 rounded-lg px-2 py-1.5 text-sm outline-none text-gray-700"
+            className="flex-1 bg-gray-100 rounded-xl px-2 py-1.5 text-sm outline-none text-gray-700"
           >
             {STATUS_OPTIONS.map(({ value, label }) => (
               <option key={value} value={value}>{label}</option>
@@ -88,7 +88,7 @@ export function HomePage() {
 
       {/* Stats */}
       {stats && (
-        <div className="grid grid-cols-4 bg-white mt-1 border-b border-gray-100">
+        <div className="grid grid-cols-4 bg-white mx-4 mt-2 rounded-2xl">
           {[
             { label: "总计",   count: stats.total,    color: "#374151" },
             { label: "已过期", count: stats.expired,  color: "#EF4444" },
@@ -106,7 +106,7 @@ export function HomePage() {
       {/* Asset List */}
       <div className="pt-2 pb-6">
         {assets.length === 0 ? (
-          <div className="text-center py-16 text-gray-400 text-sm">暂无资产，点击右下角添加</div>
+          <div className="py-16 px-4 text-gray-400 text-sm">暂无资产，点击右下角添加</div>
         ) : (
           assets.map((a) => (
             <AssetCard key={a.id} asset={a} onClick={() => navigate(`/assets/${a.id}`)} />
@@ -115,12 +115,16 @@ export function HomePage() {
       </div>
 
       {/* FAB */}
-      <button
-        onClick={() => navigate("/assets/new")}
-        className="fixed right-4 bottom-20 w-14 h-14 bg-[#22C55E] text-white rounded-full flex items-center justify-center shadow-lg active:scale-95 z-40"
-      >
-        <Plus size={28} />
-      </button>
+      <div className="fixed bottom-20 left-0 right-0 z-40 pointer-events-none">
+        <div className="max-w-2xl mx-auto relative h-14">
+          <button
+            onClick={() => navigate("/assets/new")}
+            className="absolute right-4 bottom-0 w-14 h-14 bg-[#22C55E] text-white rounded-full flex items-center justify-center shadow-lg active:scale-95 pointer-events-auto"
+          >
+            <Plus size={28} />
+          </button>
+        </div>
+      </div>
     </Layout>
   );
 }

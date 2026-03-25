@@ -83,7 +83,7 @@ export function AssetFormPage() {
       </div>
 
       <div className="px-4 py-4 space-y-3 pb-24">
-        <div className="bg-white rounded-xl px-4 py-2">
+        <div className="bg-white rounded-2xl px-4 py-2">
           {[
             { label: "资产名称 *", placeholder: "如：阿里云服务器", key: "name" as const },
             { label: "服务商 *", placeholder: "如：阿里云 / 腾讯云", key: "provider" as const },
@@ -105,7 +105,7 @@ export function AssetFormPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl px-4 py-2">
+        <div className="bg-white rounded-2xl px-4 py-2">
           <div className="py-3 border-b border-gray-50">
             <div className="text-xs text-gray-500 mb-1">续费价格</div>
             <div className="flex items-center gap-2">

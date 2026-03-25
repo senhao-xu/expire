@@ -14,7 +14,7 @@ export function StatusBanner({ expireDate }: { expireDate: string }) {
     : `正常，还有 ${days} 天`;
 
   return (
-    <div className="w-full py-3 px-4 text-white text-center text-sm font-medium" style={{ backgroundColor: color }}>
+    <div className="mx-4 mt-3 rounded-xl py-3 px-4 text-white text-center text-sm font-medium" style={{ backgroundColor: color }}>
       {text}
     </div>
   );

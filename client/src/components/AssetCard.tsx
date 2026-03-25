@@ -22,9 +22,9 @@ export function AssetCard({ asset, onClick }: Props) {
   return (
     <div
       onClick={onClick}
-      className="bg-white mx-4 my-2 rounded-lg p-4 relative overflow-hidden cursor-pointer active:opacity-80 shadow-sm"
+      className="bg-white mx-4 my-2 rounded-2xl p-4 relative overflow-hidden cursor-pointer active:opacity-80 shadow-sm"
     >
-      <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-lg" style={{ backgroundColor: color }} />
+      <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl" style={{ backgroundColor: color }} />
       <div className="flex justify-between items-start">
         <div className="flex-1 min-w-0">
           <div className="font-medium text-gray-900 truncate">{asset.name}</div>

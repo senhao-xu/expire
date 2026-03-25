@@ -32,9 +32,10 @@ export function RenewalDialog({ open, defaultAmount, defaultCurrency = "CNY", on
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end" style={{ maxWidth: 430, margin: "0 auto" }}>
+    <div className="fixed inset-0 z-[100]">
       <div className="absolute inset-0 bg-black/40" onClick={onCancel} />
-      <div className="relative w-full bg-white rounded-t-2xl p-5 space-y-4">
+      <div className="absolute bottom-0 left-0 right-0 max-w-2xl mx-auto">
+        <div className="bg-white rounded-t-2xl p-5 space-y-4">
         <h3 className="font-semibold text-gray-900 text-center">记录续费</h3>
         <div>
           <label className="text-xs text-gray-500 block mb-1">金额</label>
@@ -72,6 +73,7 @@ export function RenewalDialog({ open, defaultAmount, defaultCurrency = "CNY", on
           <button onClick={handleConfirm} className="flex-1 py-2.5 rounded-xl bg-[#22C55E] text-white text-sm font-medium">
             续费
           </button>
+        </div>
         </div>
       </div>
     </div>

@@ -16,9 +16,10 @@ export function OptionPickerSheet({ open, title, options, value, onSelect, onCan
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end" style={{ maxWidth: 430, margin: "0 auto" }}>
+    <div className="fixed inset-0 z-50">
       <div className="absolute inset-0 bg-black/40" onClick={onCancel} />
-      <div className="relative w-full bg-white rounded-t-2xl max-h-[60vh] flex flex-col">
+      <div className="absolute bottom-0 left-0 right-0 max-w-2xl mx-auto">
+        <div className="bg-white rounded-t-2xl max-h-[60vh] flex flex-col">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 shrink-0">
           <button className="text-gray-500 text-sm" onClick={onCancel}>取消</button>
           <span className="font-medium text-gray-900">{title}</span>
@@ -36,6 +37,7 @@ export function OptionPickerSheet({ open, title, options, value, onSelect, onCan
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </div>
   );

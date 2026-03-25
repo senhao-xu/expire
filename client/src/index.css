@@ -14,13 +14,10 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
-  background: #f5f5f5;
+  background: #F2F2F7;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
-  max-width: 430px;
-  margin: 0 auto;
   min-height: 100dvh;
-  background: #fff;
-  position: relative;
 }

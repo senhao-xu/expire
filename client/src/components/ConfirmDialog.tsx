@@ -10,7 +10,7 @@ export function ConfirmDialog({ open, title, message, onConfirm, onCancel }: Pro
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50" style={{ maxWidth: 430, margin: "0 auto" }}>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50">
       <div className="bg-white w-4/5 rounded-2xl overflow-hidden shadow-xl">
         <div className="px-6 pt-6 pb-4 text-center">
           <div className="font-semibold text-gray-900 text-base">{title}</div>
